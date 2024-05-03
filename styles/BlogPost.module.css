@@ -1,0 +1,22 @@
+.main {
+    align-items: center;
+    margin: 20px auto;
+}
+.container {
+    padding: 20px;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+}
+.heading {
+    text-align: center;
+    font-size: 30px;
+}
+.text {
+    line-height: 1.6;
+    max-width: 800px;
+    padding: 10px;
+    margin: 10px auto;
+
+}

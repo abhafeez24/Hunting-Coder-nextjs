@@ -4,7 +4,7 @@
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@
 }
 
 .description {
-  margin: 4rem 0;
+  /* margin: 0; */
   line-height: 1.5;
   font-size: 1.5rem;
 }
@@ -127,3 +127,29 @@
     filter: invert(1);
   }
 }
+
+
+.main_nav ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 54px;
+}
+
+.main_nav ul li {
+  margin: 0 24px;
+  font-weight: bold;
+  list-style: none;
+}
+
+.myImg {
+  border-radius: 10px;
+  margin: 10px ;
+}
+
+.imgWrap {
+  padding: 30px 0;
+}
+
+
+
+

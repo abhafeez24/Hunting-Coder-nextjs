@@ -1,0 +1,20 @@
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+.heading {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .subHeading {
+    text-align: center;
+  }
+
+  .text {
+    line-height: 1.6;
+  }
