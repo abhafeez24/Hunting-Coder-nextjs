@@ -2,6 +2,9 @@ import React from 'react'
 import styles from "../styles/Component.module.css";
 import Link from "next/link";
 
+
+//collect all data from blogdata directory
+//Iterate and diplay them
 const blog = () => {
   return (
     <div>

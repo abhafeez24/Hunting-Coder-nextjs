@@ -3,6 +3,9 @@ import React from "react";
 import styles from "../../styles/BlogPost.module.css";
 import { useRouter } from "next/router";
 
+
+//find the file corresponding to slug
+//populate them inside
 const slug = () => {
   const router = useRouter();
   let { slug } = router.query;
