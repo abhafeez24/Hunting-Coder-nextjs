@@ -15,9 +15,9 @@ const about = () => {
         <h2 className={styles.subHeading}>Meet the Team</h2>
         <p className={styles.text}>Our team is made up of passionate individuals dedicated to making a difference. We come from diverse backgrounds but share a common goal.</p>
         <ul>
-            <li>John Doe - CEO</li>
-            <li>Jane Smith - Marketing Director</li>
-            <li>Michael Johnson - Head of Operations</li>
+            <li>Harry - CEO</li>
+            <li>Abdul - Marketing Director</li>
+            <li>Hafeez - Head of Operations</li>
         </ul>
         
         <h2 className={styles.subHeading}>Contact Us</h2>
