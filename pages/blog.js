@@ -5,22 +5,11 @@ import Link from "next/link";
 
 //collect all data from blogdata directory
 //Iterate and diplay them
-const blog = () => {
-  
-  const [blogs, setBlogs] = useState([])
-  
-  useEffect(() => {
-
-    console.log('useEffect running...')
-    fetch('http://localhost:3000/api/blogs').then((a) => a.json()).then((parsed) => {
-      console.log(parsed)
-      setBlogs(parsed)
-    })
-    
-  }, [])
+const blog = (props) => {
+  const [blogs, setBlogs] = useState(props.allBlogs)
   
 
-  return (
+  return ( 
     <>
     <style jsx>
     {`
@@ -41,6 +30,15 @@ const blog = () => {
         </div>
     </>
   )
+}
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  let data = await fetch('http://localhost:3000/api/blogs')
+  let allBlogs = await data.json();
+
+  // Pass data to the page via props
+  return { props: { allBlogs } }
 }
 
 export default blog

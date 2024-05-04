@@ -6,23 +6,9 @@ import { useRouter } from "next/router";
 
 //find the file corresponding to slug
 //populate them inside
-const slug = () => {
-  const [blog, setBlog] = useState([])
-  const router = useRouter();
+const slug = (props) => {
+  const [blog, setBlog] = useState(props.myBlogs)
   
-  useEffect(() => {
-    if(!router.isReady) {
-      return;
-    }
-    const { slug } = router.query;
-    fetch(`http://localhost:3000/api/getblog?slug=${slug}`).then((a)=> a.json()).then((parsed) => {
-      console.log(slug)
-      console.log(parsed)
-      setBlog(parsed)
-      console.log(blog)
-      
-    })
-  }, [router.isReady])
   
   return (
     <div className={styles.main}>
@@ -36,5 +22,19 @@ const slug = () => {
     </div>
   );
 };
+
+
+export async function getServerSideProps(context) {
+  // console.log(context.query)
+  
+    const { slug } = context.query;
+    
+    // Fetch data from external API
+    let data = await fetch(`http://localhost:3000/api/getblog?slug=${slug}`)
+  let myBlogs = await data.json();
+
+  // Pass data to the page via props
+  return { props: { myBlogs } }
+}
 
 export default slug;
