@@ -24,7 +24,7 @@ const Blog = (props) => {
             return <div className="blogs" key={blogitem.slug}>
           <Link href={`/blogpost/${blogitem.slug}`}>
               <h3 className={styles.subHeading}>{blogitem.title}</h3></Link>
-              <p className={styles.text}>{blogitem.content.substr(0,100)}</p>
+              <p className={styles.text}>{blogitem.metadesc.substr(0,100)}</p>
           </div>
           })}
         </div>
@@ -48,8 +48,7 @@ export async function getStaticProps() {
   let allBlogs = [];
   for (let index = 0; index < data.length; index++) {
     const item = data[index];
-    console.log(item);
-    myfile = fs.promises.readFile(("blogdata/"+item), utf-8);
+    myfile = await fs.promises.readFile(("blogdata/"+item), "utf-8");
     allBlogs.push(JSON.parse(myfile))
   }
 

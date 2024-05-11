@@ -7,6 +7,11 @@ import * as fs from "fs";
 //find the file corresponding to slug
 //populate them inside
 const Slug = (props) => {
+
+  function createMarkup(c) {
+    return {__html: c};
+  }
+
   const [blog, setBlog] = useState(props.myBlogs)
   
   
@@ -16,9 +21,8 @@ const Slug = (props) => {
         <h1 className={styles.heading}>{blog && blog.title}</h1>
       </div>
 
-      <div className={styles.text}>
-        {blog && blog.content} 
-      </div>
+      {blog && <div className={styles.text} dangerouslySetInnerHTML={createMarkup(blog.content)}></div> } 
+      
     </div>
   );
 };
@@ -47,20 +51,20 @@ export async function getStaticPaths() {
       }, 
       {
         params: {
-         slug: 'how-to-learn-kubernitites'
+         slug: 'how-to-learn-kubernities'
         },
       },
       {
         params: {
          slug: 'how-to-learn-python'
         },
-      },
+      }
     ],
     fallback: true, // false or "blocking"
   }
 }
 
-export async function getStaticProops(context) {
+export async function getStaticProps(context) {
   
     const { slug } = context.params;
     
