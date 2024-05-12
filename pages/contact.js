@@ -20,7 +20,7 @@ const Contact = () => {
       body: JSON.stringify(data),
     })
     .then(response => response.json())
-    .then( data=> {console.log('Success: ', data)
+    .then( data => {console.log('Success: ')
       alert("Thanks for Submitting");
       setname('')
       setphone('')
@@ -47,7 +47,7 @@ const Contact = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Contact Us</h1>
+      <h1 className={styles.heading}>Contact Us</h1>
       <form onSubmit={handleSubmit}>
         <div className={styles.mb3}>
           <label htmlFor="name" className={styles.formlabel}>
@@ -114,12 +114,13 @@ const Contact = () => {
           <textarea
             name="desc"
             value={desc}
+            rows={6}
             onChange={handleChange}
             id="desc"
             placeholder="Write comment here"
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className={styles.btn}>
           Submit
         </button>
       </form>
